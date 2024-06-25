@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Carrito de Compras</title>
+  <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+  <header>
+    <div class="container">
+      <h1>Carrito de Compras</h1>
+      <nav>
+        <ul>
+          <li><a href="index.html">Seguir Comprando</a></li>
+        </ul>
+      </nav>
+    </div>
+  </header>
+
+  <section class="carrito">
+    <div class="container">
+      <div class="carrito-items">
+        <!-- Aquí se mostrarán los productos del carrito -->
+      </div>
+      <div class="carrito-total">
+        <!-- Aquí se mostrará el total del carrito -->
+      </div>
+      <div class="acciones-carrito">
+        <button onclick="vaciarCarrito()">Vaciar Carrito</button>
+        <button onclick="realizarCompra()">Realizar Compra</button>
+      </div>
+    </div>
+  </section>
+
+  <script src="script.js"></script>
+  <script>
+    // Mostrar el carrito al cargar la página
+    document.addEventListener('DOMContentLoaded', function() {
+      mostrarCarrito();
+    });
+  </script>
+</body>
+</html>
