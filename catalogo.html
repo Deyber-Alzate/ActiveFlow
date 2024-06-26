@@ -1,0 +1,51 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Tienda Deportiva</title>
+  <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+  <header>
+    <div class="container">
+      <h1>Active Flow</h1>
+      <nav>
+        <ul>
+          <li><a href="index.html">Inicio</a></li>
+          <li><a href="carrito.html">Carrito</a></li>
+          
+        </ul>
+      </nav>
+    </div>
+  </header>
+
+  <div class="hero">
+    <h2>Bienvenidos a nuestro catalogo deportivo</h2>
+  </div>
+
+  <div class="container">
+    <section class="productos" id="productos">
+      <h4 id="catalogo-title">Catálogo Tienda Virtual</h4>
+      <div class="productos-grid"></div>
+    </section>
+
+    <section class="carrito" id="carrito">
+      <h2>Carrito de Compras</h2>
+      <div class="carrito-items"></div>
+      <div class="acciones-carrito">
+        <p>Total: <span class="carrito-total">$0</span></p>
+        <button onclick="vaciarCarrito()">Vaciar Carrito</button>
+        <button onclick="realizarCompra()">Realizar Compra</button>
+        <button id="seguir-comprando-button">Seguir Comprando</button>
+      </div>
+    </section>
+  </div>
+
+  <footer>
+    <p>&copy; 2023 Tienda Deportiva. Todos los derechos reservados.</p>
+  </footer>
+
+  <script src="script.js"></script>
+</body>
+</html>

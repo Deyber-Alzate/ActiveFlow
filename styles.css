@@ -2,24 +2,25 @@ body {
   font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
   margin: 0;
   padding: 0;
-  background-color: #f0f0f0;
-  color: #333;
+  background-color: #000000;
+  color: #e000e0;
   line-height: 1.6;
-  background-image: url(./imagenes/Fondo.jpg);
+  background-image: url(./imagenes/Fondo2.0.jpg);
   background-size: cover;
   background-repeat: no-repeat;
   background-position: 50%;
+  font-family: 'Helvetica Neue';
 }
 
 .container {
   width: 80%;
   max-width: 1200px;
   margin: 0 auto;
-  padding: 20px;
+  padding: 10px;
 }
 
 header {
-  background-color: #333;
+  background-color: #7c491c;
   color: #fff;
   padding: 10px 0;
 }
@@ -27,6 +28,9 @@ header {
 header h1 {
   margin: 0;
   font-size: 1.8rem;
+  color: rgb(0, 111, 222);
+  font-family: 'Helvetica Neue';
+  
 }
 
 nav ul {
@@ -40,8 +44,9 @@ nav ul li {
 }
 
 nav ul li a {
-  color: #fff;
+  color: #000000;
   text-decoration: none;
+  font-family: 'Helvetica Neue';
 }
 
 .hero {
@@ -53,7 +58,9 @@ nav ul li a {
   justify-content: center;
   align-items: center;
   text-align: center;
-  color: #fff;
+  color: #33ff00;
+  font-size: 2.0rem;
+  font-family: 'Helvetica Neue';
 }
 
 .productos {
@@ -111,7 +118,7 @@ nav ul li a {
 }
 
 .producto-card .info .precio:hover {
-    color: #e74c3c;
+    color: #040100;
 }
 footer {
   background-color: #333;
@@ -152,7 +159,7 @@ footer {
 }
 
 .acciones-carrito button {
-  background-color: #333;
+  background-color: #ff0000;
   color: #fff;
   border: none;
   padding: 10px 20px;
@@ -163,3 +170,19 @@ footer {
 .acciones-carrito button:hover {
   background-color: #555;
 }
+.hero h2{
+  color:#09ff00;
+  font-size: 2.0rem;
+  font-family: 'Helvetica Neue';
+}
+.container h4{
+  color: rgb(0, 255, 21);
+  font-size: 2.0rem;
+  font-family: 'Helvetica Neue';
+  align-items: center;
+  
+}
+.container h2{
+  color: rgb(0, 255, 8);
+}
+

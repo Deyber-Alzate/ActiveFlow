@@ -1,24 +1,18 @@
-// Simulación de productos (se deberían cargar desde la base de datos)
 let productos = [
   { id: 1, nombre: 'Camiseta Deportiva', descripcion: 'Camiseta transpirable para entrenamiento', precio: 35000, imagen: 'imagenes/Camiseta.jpg', stock: 10 },
   { id: 2, nombre: 'Pantalones Deportivos', descripcion: 'Pantalones cómodos para cualquier tipo de actividad física', precio: 55000, imagen: 'imagenes/pantalones.jpeg', stock: 8 },
-  { id: 3, nombre: 'Zapatillas de Running', descripcion: 'Zapatillas ligeras y resistentes para correr', precio: 130000, imagen: 'imagenes/zapatillas.jpg', stock: 5 }
+  { id: 3, nombre: 'Zapatillas de Running', descripcion: 'Zapatillas ligeras y resistentes para correr', precio: 130000, imagen: 'imagenes/zapatillas.jpg', stock: 5 },
+  { id: 4, nombre: 'Balon profecional copa america', descripcion: 'Balon profecional para cancha de cesped natural', precio: 500000, imagen: 'imagenes/Balon_Americas.jpg', stock: 10},
 ];
 
 // Función para formatear el precio
 function formatearPrecio(precio) {
-  // Redondear el precio y convertirlo a entero para eliminar decimales
-  let precioFormateado = Math.round(precio);
-
-  // Convertir el número a una cadena y añadir separadores de miles
-  precioFormateado = precioFormateado.toLocaleString('es-ES');
-
-  return precioFormateado;
+  return precio.toLocaleString('es-ES');
 }
 
 // Recorrer los productos y formatear el precio de cada uno
 productos.forEach(producto => {
-  producto.precio;
+  producto.precio = formatearPrecio(producto.precio);
 });
 
 // Función para mostrar productos en el catálogo
@@ -32,8 +26,8 @@ function mostrarProductos() {
         <div class="info">
           <h3>${producto.nombre}</h3>
           <p>${producto.descripcion}</p>
-          <p class="precio">$${producto.precio = formatearPrecio(producto.precio)}</p>
-          <button onclick="agregarAlCarrito(${producto.id}, '${producto.nombre}', ${producto.precio})" ${producto.stock === 0 ? 'disabled' : ''}>
+          <p class="precio">$${producto.precio}</p>
+          <button onclick="agregarAlCarrito(${producto.id}, '${producto.nombre}', ${producto.precio.replace(/\./g, '')})" ${producto.stock === 0 ? 'disabled' : ''}>
             ${producto.stock === 0 ? 'Sin Stock' : 'Agregar al Carrito'}
           </button>
         </div>
@@ -42,17 +36,19 @@ function mostrarProductos() {
   });
 
   document.querySelector('.productos-grid').innerHTML = productosHTML;
+  document.getElementById('productos').style.display = 'block';
+  document.getElementById('carrito').style.display = 'none';
 }
 
 // Función para agregar un producto al carrito
 function agregarAlCarrito(id, nombre, precio) {
-  let carrito = JSON.parse(localStorage.getItem('carrito')) || [];
+  let carrito = obtenerCarrito();
   let encontrado = carrito.find(item => item.id === id);
 
   if (encontrado) {
     if (encontrado.cantidad < productos.find(p => p.id === id).stock) {
       encontrado.cantidad++;
-      alert('Producto agregado al carrito')
+      alert('Producto agregado al carrito');
     } else {
       alert('¡No hay suficiente stock disponible!');
     }
@@ -101,11 +97,6 @@ function eliminarDelCarrito(idProducto) {
   actualizarCarrito();
 }
 
-// Función para obtener el contenido actual del carrito
-function obtenerCarrito() {
-  return JSON.parse(localStorage.getItem('carrito')) || [];
-}
-
 // Función para actualizar la interfaz del carrito
 function actualizarCarrito() {
   let carrito = obtenerCarrito();
@@ -120,9 +111,9 @@ function actualizarCarrito() {
           <span>${item.nombre}</span>
         </div>
         <div>
-          <span>Precio: $${item.precio}</span>
+          <span>Precio: $${formatearPrecio(item.precio)}</span>
           <span>Cantidad: ${item.cantidad}</span>
-          <span>Total: $${(item.precio * item.cantidad)}</span>
+          <span>Total: $${formatearPrecio(item.precio * item.cantidad)}</span>
         </div>
       </div>
     `;
@@ -133,16 +124,35 @@ function actualizarCarrito() {
   document.querySelector('.carrito-items').innerHTML = carritoHTML;
 
   // Mostrar el total del carrito
-  document.querySelector('.carrito-total').textContent = `$${total.toFixed(2)}`;
+  document.querySelector('.carrito-total').textContent = `$${formatearPrecio(total)}`;
 }
 
 // Función para mostrar el carrito
 function mostrarCarrito() {
   actualizarCarrito(); // Actualizar el contenido del carrito antes de mostrarlo
+  document.getElementById('productos').style.display = 'none';
+  document.getElementById('carrito').style.display = 'block';
 }
-
 
 // Cargar productos al cargar la página
 document.addEventListener('DOMContentLoaded', () => {
   mostrarProductos();
+
+  // Agregar evento click al botón de catálogo
+  document.getElementById('catalogo-button').addEventListener('click', (e) => {
+    e.preventDefault();
+    mostrarProductos();
+  });
+
+  // Agregar evento click al botón de carrito
+  document.getElementById('carrito-button').addEventListener('click', (e) => {
+    e.preventDefault();
+    mostrarCarrito();
+  });
+
+  // Agregar evento click al botón de seguir comprando
+  document.getElementById('seguir-comprando-button').addEventListener('click', (e) => {
+    e.preventDefault();
+    mostrarProductos();
+  });
 });
