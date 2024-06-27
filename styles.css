@@ -2,53 +2,82 @@ body {
   font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
   margin: 0;
   padding: 0;
-  background-color: #000000;
-  color: #e000e0;
+  background-color: #0e0e0e;
+  color: #fff700;
   line-height: 1.6;
-  background-image: url(./imagenes/Fondo2.0.jpg);
+  background-image: url(./imagenes/fachada23.jpg);
   background-size: cover;
   background-repeat: no-repeat;
   background-position: 50%;
-  font-family: 'Helvetica Neue';
 }
-
+body.catalogo-page {
+  background-image: url('./imagenes/fondo_catalogo.jpg');
+  background-size: cover;
+  background-repeat: no-repeat;
+  background-position: center;
+}
+body.carrito-page {
+  background-image: url('./imagenes/Fondo2.0.jpg');
+  background-size: cover;
+  background-repeat: no-repeat;
+  background-position: center;
+  
+}
 .container {
   width: 80%;
   max-width: 1200px;
   margin: 0 auto;
-  padding: 10px;
+  padding: 20px;
 }
 
+/* cambio de color del fondo de el nombre de nustra pagina y tamaño de cobertura */
 header {
-  background-color: #7c491c;
-  color: #fff;
+  background-color: #424141;
+  color: #000000;
   padding: 10px 0;
 }
-
+/* cambio de color de los titulos de la pagina*/
 header h1 {
   margin: 0;
   font-size: 1.8rem;
-  color: rgb(0, 111, 222);
+  color: rgb(225, 255, 0);
   font-family: 'Helvetica Neue';
-  
 }
-
+/* manejo del lugar y posicion de lo botones de inicio y demas */
 nav ul {
   list-style-type: none;
   padding: 0;
+  display: center;
+  justify-content: center;
+  gap: 20px;
 }
 
 nav ul li {
   display: inline;
-  margin-right: 20px;
 }
 
+nav ul.nav-buttons {
+  display: flex;
+  gap: 20px;
+}
+/* cambio de colores y tamañs de los botones de inicio catalogo carrito y administrar*/
 nav ul li a {
-  color: #000000;
+  display: block;
+  padding: 10px 20px;
+  background-color: #000000;
+  border: 1px solid #000000;
+  border-radius: 4px;
+  color: #ffffff;
   text-decoration: none;
-  font-family: 'Helvetica Neue';
+  transition: background-color 0.3s, transform 0.3s;
 }
 
+nav ul li a:hover {
+  background-color: #ddd;
+  transform: scale(1.05);
+}
+
+/* tamaño y color del texto segundario de el inicio de la pagina*/
 .hero {
   background-image: url('hero-image.jpg');
   background-size: cover;
@@ -58,11 +87,10 @@ nav ul li a {
   justify-content: center;
   align-items: center;
   text-align: center;
-  color: #33ff00;
+  color: #eeff00;
   font-size: 2.0rem;
   font-family: 'Helvetica Neue';
 }
-
 .productos {
   padding: 40px 0;
 }
@@ -79,9 +107,9 @@ nav ul li a {
   grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
   gap: 20px;
 }
-
+/*cambio de color a los fondos de los textos de los catalogos de material de deporte*/
 .producto-card {
-  background-color: #fff;
+  background-color: #4d584c;
   border-radius: 8px;
   overflow: hidden;
   box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
@@ -120,6 +148,7 @@ nav ul li a {
 .producto-card .info .precio:hover {
     color: #040100;
 }
+/* Footer styling */
 footer {
   background-color: #333;
   color: #fff;
@@ -129,7 +158,6 @@ footer {
   bottom: 0;
   width: 100%;
 }
-
 .carrito {
   padding: 40px 0;
 }
@@ -139,15 +167,15 @@ footer {
   padding: 10px;
   margin-bottom: 20px;
 }
-
+/* manejor de la descripcion y precios de los productos una ves seleccionados para la compra */
 .item-carrito {
   display: flex;
   justify-content: space-between;
   align-items: center;
-  border-bottom: 1px solid #eee;
+  border-bottom: 1px solid #ffffff;
   padding: 10px 0;
 }
-
+/*menejo del tamaño de las imagnes de los productos en la parte del carrito*/
 .item-carrito img {
   max-width: 100px;
   height: auto;
@@ -157,7 +185,7 @@ footer {
 .acciones-carrito {
   text-align: right;
 }
-
+/* cambio de color y tamaños de los botones de el apartado de el carrito de compras */
 .acciones-carrito button {
   background-color: #ff0000;
   color: #fff;
@@ -166,23 +194,40 @@ footer {
   margin-left: 10px;
   cursor: pointer;
 }
-
+/* cambio de color de los botones de confirmacion de compra o borrar compra para que genere efecto*/
 .acciones-carrito button:hover {
   background-color: #555;
 }
+/* cambio de color y tamaño de el titulo de catalogo */
 .hero h2{
-  color:#09ff00;
+  color:#e5ff00;
   font-size: 2.0rem;
   font-family: 'Helvetica Neue';
 }
+/* cambio de color y tamañao del texto el texto primario de el catalogo */
 .container h4{
-  color: rgb(0, 255, 21);
+  color: rgb(234, 255, 0);
   font-size: 2.0rem;
   font-family: 'Helvetica Neue';
   align-items: center;
   
 }
+/* cambio de color y adecuacion de tamaño de el texto primario del inicio */
 .container h2{
-  color: rgb(0, 255, 8);
+  color: rgb(251, 255, 0);
 }
 
+
+header nav ul li a .fas {
+  font-size: 1.0em; /* Ajusta el tamaña y color del carrito */
+  color:#ff0000;
+}
+/* cambios de colores de los botones cuando pasamos el curson por encima  */
+nav ul li a:hover {
+  background-color: #0800ff;
+  color: #fff;
+  border: none;
+  padding: 10px 20px;
+  margin-left: 10px;
+  cursor: pointer;
+}

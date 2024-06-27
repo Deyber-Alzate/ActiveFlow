@@ -37,7 +37,7 @@ function mostrarProductos() {
 
   document.querySelector('.productos-grid').innerHTML = productosHTML;
   document.getElementById('productos').style.display = 'block';
-  document.getElementById('carrito').style.display = 'none';
+  document.getElementById('jajjaja').style.display = 'none';
 }
 
 // Función para agregar un producto al carrito
