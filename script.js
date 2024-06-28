@@ -2,7 +2,12 @@ let productos = [
   { id: 1, nombre: 'Camiseta Deportiva', descripcion: 'Camiseta transpirable para entrenamiento', precio: 35000, imagen: 'imagenes/Camiseta.jpg', stock: 10 },
   { id: 2, nombre: 'Pantalones Deportivos', descripcion: 'Pantalones cómodos para cualquier tipo de actividad física', precio: 55000, imagen: 'imagenes/pantalones.jpeg', stock: 8 },
   { id: 3, nombre: 'Zapatillas de Running', descripcion: 'Zapatillas ligeras y resistentes para correr', precio: 130000, imagen: 'imagenes/zapatillas.jpg', stock: 5 },
-  { id: 4, nombre: 'Balon profecional copa america', descripcion: 'Balon profecional para cancha de cesped natural', precio: 500000, imagen: 'imagenes/Balon_Americas.jpg', stock: 10},
+  { id: 4, nombre: 'Balon profecional copa america', descripcion: 'Balon profecional para cancha de cesped natural', precio: 500000, imagen: 'imagenes/Balon_Americas.jpg', stock: 10 },
+  { id: 5, nombre: 'Pantalon Deportivo 3.0', descripcion: 'pantalones comodos y renovadores 3.0', precio: 250000, imagen: 'imagenes/pantalon2.jpg', stock: 10 },
+  { id: 6, nombre: 'Pantalon deportivo dama', descripcion: 'pantalones comodos y novedosos para dama', precio: 250000, imagen: 'imagenes/pantalonmujer.jpg', stock: 10 },
+  { id: 7, nombre: 'Medias Deportivas', descripcion: 'Medias comodas y Antideslisantes ', precio: 100000, imagen: 'imagenes/medias_depor.jpg', stock: 10 },
+  { id: 8, nombre: 'Zapatos unisex', descripcion: 'Zapatos de suela de aire unisex', precio: 350000, imagen: 'imagenes/zapatosuni.jpg', stock: 10 },
+  { id: 9, nombre: 'Guayos verdes', descripcion: 'Guayos con botin alto para cesped natural', precio: 600000, imagen: 'imagenes/guayos.jpg', stock: 10 },
 ];
 
 // Función para formatear el precio
@@ -27,7 +32,7 @@ function mostrarProductos() {
           <h3>${producto.nombre}</h3>
           <p>${producto.descripcion}</p>
           <p class="precio">$${producto.precio}</p>
-          <button onclick="agregarAlCarrito(${producto.id}, '${producto.nombre}', ${producto.precio.replace(/\./g, '')})" ${producto.stock === 0 ? 'disabled' : ''}>
+          <button onclick="agregarAlCarrito(${producto.id}, '${producto.nombre}', ${producto.precio.replace(/\./g, '').replace(',', '.')}, ${producto.stock})" ${producto.stock === 0 ? 'disabled' : ''}>
             ${producto.stock === 0 ? 'Sin Stock' : 'Agregar al Carrito'}
           </button>
         </div>
@@ -37,16 +42,16 @@ function mostrarProductos() {
 
   document.querySelector('.productos-grid').innerHTML = productosHTML;
   document.getElementById('productos').style.display = 'block';
-  document.getElementById('jajjaja').style.display = 'none';
+  document.getElementById('carrito').style.display = 'none';
 }
 
 // Función para agregar un producto al carrito
-function agregarAlCarrito(id, nombre, precio) {
+function agregarAlCarrito(id, nombre, precio, stock) {
   let carrito = obtenerCarrito();
   let encontrado = carrito.find(item => item.id === id);
 
   if (encontrado) {
-    if (encontrado.cantidad < productos.find(p => p.id === id).stock) {
+    if (encontrado.cantidad < stock) {
       encontrado.cantidad++;
       alert('Producto agregado al carrito');
     } else {
@@ -114,6 +119,9 @@ function actualizarCarrito() {
           <span>Precio: $${formatearPrecio(item.precio)}</span>
           <span>Cantidad: ${item.cantidad}</span>
           <span>Total: $${formatearPrecio(item.precio * item.cantidad)}</span>
+        </div>
+        <div>
+          <button onclick="eliminarDelCarrito(${item.id})">Eliminar</button>
         </div>
       </div>
     `;
