@@ -1,0 +1,55 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Administrar Productos - Tienda Deportiva</title>
+  <link rel="stylesheet" href="styles-administrar.css">
+</head>
+<body>
+  <header>
+    <div class="container">
+      <h1>Active Flow - Panel de Administración</h1>
+      <nav>
+        <ul>
+          <li><a href="/index.html">Inicio</a></li>
+          <li><a href="/carrito.html">Carrito</a></li>
+          <li><a href="administrar.html">Administrar Productos</a></li>
+        </ul>
+      </nav>
+    </div>
+  </header>
+
+  <div class="container">
+    <h2>Administrar Productos</h2>
+    <p>Agrega, edita o elimina productos:</p>
+
+    <button id="agregarProducto">Agregar Producto</button>
+    <table id="tablaProductos">
+      <thead>
+        <tr>
+          <th>Imagen</th>
+          <th>Nombre</th>
+          <th>Descripción</th>
+          <th>Precio</th>
+          <th>Stock</th>
+          <th>Acciones</th>
+        </tr>
+      </thead>
+      <tbody>
+        <!-- Aquí se generará dinámicamente el contenido de la tabla -->
+      </tbody>
+    </table>
+
+    <button id="guardarCambios">Guardar Cambios</button>
+  </div>
+
+  <footer>
+    <div class="container">
+      <p>&copy; 2024 Tienda Deportiva. Todos los derechos reservados.</p>
+    </div>
+  </footer>
+
+  <script src="administrar.js"></script>
+</body>
+</html>
