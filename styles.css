@@ -2,10 +2,10 @@ body {
   font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
   margin: 0;
   padding: 0;
-  background-color: #0e0e0e;
-  color: #fff700;
+  background-color: #ffffff;
+  color: #ffffff;
   line-height: 1.6;
-  background-image: url(./imagenes/fachada23.jpg);
+  background-image: url('./imagenes/fachada23.jpg');
   background-size: cover;
   background-repeat: no-repeat;
   background-position: 50%;
@@ -17,11 +17,10 @@ body.catalogo-page {
   background-position: center;
 }
 body.carrito-page {
-  background-image: url('./imagenes/Fondo2.0.jpg');
+  background-image: url('./imagenes/gris.jpg');
   background-size: cover;
   background-repeat: no-repeat;
   background-position: center;
-  
 }
 .container {
   width: 80%;
@@ -169,9 +168,10 @@ footer {
 }
 
 .carrito-items {
-  border: 1px solid #ccc;
+  border: 5px solid #ccc;
   padding: 10px;
   margin-bottom: 20px;
+  margin-top: 50px;
 }
 /* manejor de la descripcion y precios de los productos una ves seleccionados para la compra */
 .item-carrito {
@@ -212,7 +212,7 @@ footer {
 }
 /* cambio de color y tamañao del texto el texto primario de el catalogo */
 .container h4{
-  color: rgb(234, 255, 0);
+  color: rgb(242, 255, 0);
   font-size: 2.0rem;
   font-family: 'Helvetica Neue';
   align-items: center;

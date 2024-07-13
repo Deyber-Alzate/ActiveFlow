@@ -2,9 +2,16 @@
 
 // Datos de ejemplo para los productos (pueden venir del backend)
 let productos = [
-    { id: 1, imagen: 'imagenes/producto1.jpg', nombre: 'Producto 1', descripcion: 'Descripción del Producto 1', precio: '1000', stock: '10' },
-    { id: 2, imagen: 'imagenes/producto2.jpg', nombre: 'Producto 2', descripcion: 'Descripción del Producto 2', precio: '2000', stock: '8' },
-    { id: 3, imagen: 'imagenes/producto3.jpg', nombre: 'Producto 3', descripcion: 'Descripción del Producto 3', precio: '1500', stock: '5' },
+  { id: 1, nombre: 'Camiseta Deportiva', descripcion: 'Camiseta transpirable para entrenamiento', precio: 35000, imagen: 'imagenes/Camiseta.jpg', stock: 10 },
+  { id: 2, nombre: 'Pantalones Deportivos', descripcion: 'Pantalones cómodos para cualquier tipo de actividad física', precio: 55000, imagen: 'imagenes/pantalones.jpeg', stock: 8 },
+  { id: 3, nombre: 'Zapatillas de Running', descripcion: 'Zapatillas ligeras y resistentes para correr', precio: 130000, imagen: 'imagenes/zapatillas.jpg', stock: 5 },
+  { id: 4, nombre: 'Balon profesional copa america', descripcion: 'Balon profesional para cancha de cesped natural', precio: 500000, imagen: 'imagenes/Balon_Americas.jpg', stock: 10 },
+  { id: 5, nombre: 'Pantalon Deportivo 3.0', descripcion: 'pantalones comodos y renovadores 3.0', precio: 250000, imagen: 'imagenes/pantalon2.jpg', stock: 10 },
+  { id: 6, nombre: 'Pantalon deportivo dama', descripcion: 'pantalones comodos y novedosos para dama', precio: 250000, imagen: 'imagenes/pantalonmujer.jpg', stock: 10 },
+  { id: 7, nombre: 'Medias Deportivas', descripcion: 'Medias comodas y Antideslisantes ', precio: 100000, imagen: 'imagenes/medias_depor.jpg', stock: 10 },
+  { id: 8, nombre: 'Zapatos unisex', descripcion: 'Zapatos de suela de aire unisex', precio: 350000, imagen: 'imagenes/zapatosuni.jpg', stock: 10 },
+  { id: 9, nombre: 'Guayos verdes', descripcion: 'Guayos con botin alto para cesped natural', precio: 600000, imagen: 'imagenes/guayos.jpg', stock: 10 },
+
   ];
   
   // Función para inicializar la tabla con los productos actuales

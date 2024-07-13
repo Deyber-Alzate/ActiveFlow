@@ -1,5 +1,5 @@
 let productos = [
-  { id: 1, nombre: 'Camiseta Deportiva', descripcion: 'Camiseta transpirable para entrenamiento', precio: 35000, imagen: 'imagenes/Camiseta.jpg', stock: 10 },
+  { id: 1, nombre: 'Camiseta Deportiva', descripcion: 'Camiseta transpirable para entrenamiento', precio: 45000, imagen: 'imagenes/Camiseta.jpg', stock: 10 },
   { id: 2, nombre: 'Pantalones Deportivos', descripcion: 'Pantalones cómodos para cualquier tipo de actividad física', precio: 55000, imagen: 'imagenes/pantalones.jpeg', stock: 8 },
   { id: 3, nombre: 'Zapatillas de Running', descripcion: 'Zapatillas ligeras y resistentes para correr', precio: 130000, imagen: 'imagenes/zapatillas.jpg', stock: 5 },
   { id: 4, nombre: 'Balon profesional copa america', descripcion: 'Balon profesional para cancha de cesped natural', precio: 500000, imagen: 'imagenes/Balon_Americas.jpg', stock: 10 },
@@ -19,6 +19,7 @@ function formatearPrecio(precio) {
 productos.forEach(producto => {
   producto.precio = formatearPrecio(producto.precio);
 });
+
 
 // Función para mostrar productos en el catálogo
 function mostrarProductos() {
